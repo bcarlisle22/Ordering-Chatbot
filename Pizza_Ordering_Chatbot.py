@@ -1,5 +1,17 @@
-print('Hello my name is Alex, your virtual assistant. I will help you order a pizza!')
-print('I am going to ask you a few questions. After typing an answer, please press enter.')
+import time, os, sys
+def typingPrint (text):
+    for character in text: 
+        sys.stdout.write(character)
+        sys.stdout.flush()
+        time.sleep(0.09)
+
+
+
+
+typingPrint('Hello my name is Alex, your virtual assistant. I will help you order a pizza!\n')
+typingPrint('I am going to ask you a few questions. After typing a response, please press enter.')
+
+print("\n")
 
 userName=input('Enter your name:  ')
 while(len(userName) == 0):
@@ -7,13 +19,13 @@ while(len(userName) == 0):
 
 
 if userName.lower() == "brianna carlisle": 
-    print("I love that name!")
+    typingPrint("I love that name!")
 else:
-    print("Nice to meet you!")
+    typingPrint("Nice to meet you!")
 
 print("\n")
 
-print("I know you're hungry, so let's get started! ")
+typingPrint("I know you're hungry, so let's get started! ")
 
 print("\n")
 
@@ -67,13 +79,52 @@ else:
 total=( pizzaCost * quantity ) * salesTax + deliveryFee
 
 
-print('\n ------------------------')
+print('\n-------------------------')
 
-print('Thank you, ' + userName + ' for your order!') 
-print("Your ", quantity, size, flavor + ' pizza with',  crustType, "crust costs:", "${:,.2f}" .format (total) + ".")
-print("We are currently preparing your order. It will be ready for " + method + " soon!")
+typingPrint('Thank you, ' + userName + ' for your order!') 
+typingPrint(" The total for your ")
+typingPrint (str(quantity))
+typingPrint(" ")
+typingPrint (str(size))
+typingPrint(", ")
+typingPrint (str(flavor))
+typingPrint(" ")
+
+if quantity >= 2:
+   typingPrint("pizzas with ")
+else:
+    typingPrint("pizza with ")
+
+typingPrint (str(crustType))
+typingPrint(" comes: ")
+typingPrint("${:,.2f}" .format (total) + ".")
+
+print("\n")
+
+typingPrint("We are currently preparing your order. It will be ready for " + method + " soon!")
+
+print("\n")
+
+if total >= 50 :
+    print("Congratulations, you've earned a $10 coupon for you next order! ")
+
+print("\n")
+
+print("Your order has been received. ETA: 3 mins!")
+
+for min in range (3, 1, -1):
+   print(min, "minutes remaining")
+   for seconds in range (60, 0, -1):
+       print(seconds, end = " \r")
+       import time 
 
 print('\n')
 
-print('Thank you for using Max, the virtual assistant. See you next time!')
-print('------------------------')
+typingPrint('Thank you for using Max, the virtual assistant. See you next time!')
+
+print('\n')
+
+print('-------------------------')
+
+print("\n")
+
