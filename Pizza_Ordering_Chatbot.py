@@ -5,10 +5,9 @@ def typingPrint (text):
         sys.stdout.flush()
         time.sleep(0.09)
 
-
 import time, os, sys
-def typingInput (text):
-    for character in text: 
+def typingInput (input):
+    for character in input: 
         sys.stdout.write(character)
         sys.stdout.flush()
         time.sleep(0.09)
@@ -32,8 +31,8 @@ else:
     typingPrint("Nice to meet you!")
 
 keepGoing="y"
-while keepGoing.lower()== "y":
-
+while keepGoing == "y":
+    
     print("\n")
 
     typingPrint("I know you're hungry, so let's get started! ")
@@ -44,12 +43,12 @@ while keepGoing.lower()== "y":
     size= typingInput("What size pizza would you like? Plese enter small, medium, or large: ")
 
     size=input()
-    while size!= "small" and size != "medium" and size != "large":
-        size = input("Invalid value. Please enter small, medium, or large: ").lower()
+    while size.lower()!= "small" and size != "medium" and size != "large":
+        size = input("Invalid value. Please enter small, medium, or large: ")
 
     print("\n")
 
-    flavor=typingInput("Please enter the type of pizza you would like: ")
+    flavor= typingInput("Please enter the type of pizza you would like: ")
 
     flavor = input()
     while(len(flavor) == 0):
@@ -135,20 +134,10 @@ while keepGoing.lower()== "y":
     print("\n")
 
     typingPrint("Your order has been received.")
-    typingPrint(" ETA 3 mins!")
 
     print("\n")
 
-    for min in range (3, 1, -1):
-       print(min, "minutes remaining")
-       for seconds in range (60, 0, -1):
-           print(seconds, end = " \r")
-           import time 
-           time.sleep(1)
-
     print("\n")
-
-    print("Your order is ready!")
 
     print("\n")
 
@@ -157,12 +146,11 @@ while keepGoing.lower()== "y":
 
     print("\n")
 
-    keepGoing=input( "Do you want to place another order? Please enter y or n : ")
+    keepGoing= typingInput( "Would you like to place another order? Please enter y or n : ")
 
     
 else:
     typingPrint("Thank you for using Max the virtual assistant! See you next time!")
 
     print('\n')
-
   
