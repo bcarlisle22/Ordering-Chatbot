@@ -30,9 +30,6 @@ if userName.lower() == "brianna carlisle":
 else:
     typingPrint("Nice to meet you!")
 
-keepGoing="y"
-while keepGoing == "y":
-    
     print("\n")
 
     typingPrint("I know you're hungry, so let's get started! ")
@@ -146,10 +143,7 @@ while keepGoing == "y":
 
     print("\n")
 
-    keepGoing= typingInput( "Would you like to place another order? Please enter y or n : ")
-
-    
-else:
+ 
     typingPrint("Thank you for using Max the virtual assistant! See you next time!")
 
     print('\n')
